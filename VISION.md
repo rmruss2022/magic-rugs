@@ -1,4 +1,4 @@
-# Magic Rugs — Williamsburg
+# Creative Minds — Williamsburg
 ## Vision & Design Plan (v1 — Landing Page)
 
 ---
@@ -155,7 +155,7 @@ This landing page is the *front door*. The system around it is where this become
 
 **File layout:**
 ```
-magic-rugs/
+creative-minds/
 ├── VISION.md                     ← this document
 ├── README.md                     ← setup instructions
 ├── package.json

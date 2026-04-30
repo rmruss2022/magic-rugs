@@ -30,7 +30,7 @@ export default function Nav() {
         <a href="#top" className="flex items-baseline gap-3 group">
           <span className="font-display text-[1.55rem] md:text-[1.75rem] leading-none tracking-tightest-ish text-ink"
                 style={{ fontVariationSettings: "'SOFT' 100, 'opsz' 144, 'wght' 500" }}>
-            Magic Rugs
+            Creative Minds
           </span>
           <span className="hidden md:inline dateline text-ink-muted">
             <span className="font-arabic not-italic text-[0.95rem] tracking-normal text-claret/70 mr-2">حلب</span>

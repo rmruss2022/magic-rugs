@@ -1,4 +1,4 @@
-# Magic Rugs — Williamsburg
+# Creative Minds — Williamsburg
 
 A landing page for **Mahmoud & Alyssa Koseyaem's** Brooklyn weaving studio. Eight generations of hand-knotted rugs from Aleppo, re-rooted on Metropolitan Avenue.
 

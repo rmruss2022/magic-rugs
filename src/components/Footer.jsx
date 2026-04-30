@@ -30,7 +30,7 @@ export default function Footer() {
           <div className="col-span-12 md:col-span-4">
             <div className="font-display text-[1.7rem] text-paper leading-none mb-2"
                  style={{ fontVariationSettings: "'SOFT' 100, 'opsz' 144, 'wght' 500" }}>
-              Magic Rugs
+              Creative Minds
             </div>
             <p className="dateline text-paper/60 leading-relaxed">
               Hand-knotted in Aleppo.
@@ -52,9 +52,9 @@ export default function Footer() {
           <div className="col-span-6 md:col-span-3">
             <div className="dateline text-saffron mb-3">Elsewhere</div>
             <ul className="space-y-2 text-paper/85 text-sm">
-              <li><a href="https://instagram.com/magic_rugs" className="hover:text-saffron">Instagram</a></li>
-              <li><a href="https://magic-rugs.com" className="hover:text-saffron">Etsy / Shop</a></li>
-              <li><a href="mailto:hello@magic-rugs.com" className="hover:text-saffron">hello@magic-rugs.com</a></li>
+              <li><a href="https://instagram.com/creative_minds" className="hover:text-saffron">Instagram</a></li>
+              <li><a href="https://creative-minds.com" className="hover:text-saffron">Etsy / Shop</a></li>
+              <li><a href="mailto:hello@creative-minds.com" className="hover:text-saffron">hello@creative-minds.com</a></li>
             </ul>
           </div>
 
@@ -71,7 +71,7 @@ export default function Footer() {
         {/* Bottom line */}
         <div className="mt-16 pt-8 border-t border-paper/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-paper/55">
           <div className="dateline text-[0.65rem]">
-            © {year} Magic Rugs LLC. All rugs have a history.
+            © {year} Creative Minds LLC. All rugs have a history.
           </div>
           <div className="dateline text-[0.65rem]">
             Site in progress — v0.1 · Spring 2026

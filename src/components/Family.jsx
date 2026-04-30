@@ -71,7 +71,7 @@ export default function Family() {
               — A Tuesday in March, somewhere in Texas.
             </p>
             <p className="mt-10 text-ink-soft leading-relaxed max-w-reading pl-6 md:pl-8">
-              The family runs Magic Rugs together. Alyssa manages the Etsy shop and the
+              The family runs Creative Minds together. Alyssa manages the Etsy shop and the
               teaching side — she's the calmer half of the classes. Mahmoud's brother helps
               from Turkey. His father, still in Aleppo, FaceTimes every week. When the
               regime fell in December, they started talking about going home, just to

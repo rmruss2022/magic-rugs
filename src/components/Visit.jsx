@@ -39,7 +39,7 @@ export default function Visit() {
             transition={{ duration: 1.0 }}
             className="col-span-12 md:col-span-5 bg-paper p-8 md:p-10 border border-ink/10"
           >
-            <div className="dateline text-claret mb-3">Magic Rugs Studio</div>
+            <div className="dateline text-claret mb-3">Creative Minds Studio</div>
             <div className="font-display text-[1.6rem] md:text-[1.85rem] leading-[1.2] text-ink mb-8"
                  style={{ fontVariationSettings: "'SOFT' 100, 'opsz' 144, 'wght' 430" }}>
               247 Metropolitan Ave
@@ -73,9 +73,9 @@ export default function Visit() {
               <div>
                 <div className="dateline text-ink-muted mb-2">Reach us</div>
                 <div className="space-y-1 text-ink-soft">
-                  <div><a href="mailto:hello@magic-rugs.com" className="hover:text-claret underline-offset-4 hover:underline">hello@magic-rugs.com</a></div>
+                  <div><a href="mailto:hello@creative-minds.com" className="hover:text-claret underline-offset-4 hover:underline">hello@creative-minds.com</a></div>
                   <div><a href="tel:+17185550100" className="hover:text-claret">+1 (718) 555-0100</a></div>
-                  <div><a href="https://instagram.com/magic_rugs" className="hover:text-claret">@magic_rugs</a></div>
+                  <div><a href="https://instagram.com/creative_minds" className="hover:text-claret">@creative_minds</a></div>
                 </div>
               </div>
 

@@ -27,7 +27,7 @@ const STOPS = [
     city: 'Houston',
     country: 'Texas',
     years: '2021 – Now',
-    note: 'Magic Rugs is born. Markets, Etsy, a storage locker the size of a small shop.',
+    note: 'Creative Minds is born. Markets, Etsy, a storage locker the size of a small shop.',
     arabic: 'هيوستن',
   },
   {
