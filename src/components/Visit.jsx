@@ -18,16 +18,16 @@ export default function Visit() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
         {/* Header */}
         <div className="mb-16 md:mb-20 max-w-3xl">
-          <span className="dateline text-claret">§ 07 · Come See</span>
+          <span className="dateline text-claret-light">§ 08 · Come See</span>
           <h2 className="mt-4 font-display text-display-md text-ink"
               style={{ fontVariationSettings: "'SOFT' 100, 'opsz' 144, 'wght' 420" }}>
-            The studio is
+            The shop is
             <br />
             <span className="italic font-editorial font-normal">on Metropolitan.</span>
           </h2>
           <p className="mt-6 text-ink-soft leading-relaxed max-w-reading">
-            Drop in any open hour. The kettle is always going. Nothing is locked behind
-            glass. Touch the rugs. Watch the loom move.
+            Drop in any open hour. The kettle is on. Nothing is locked behind glass —
+            touch the rugs, watch the loom, ask anything. No appointment needed.
           </p>
         </div>
 
@@ -39,7 +39,7 @@ export default function Visit() {
             transition={{ duration: 1.0 }}
             className="col-span-12 md:col-span-5 bg-paper p-8 md:p-10 border border-ink/10"
           >
-            <div className="dateline text-claret mb-3">Creative Minds Studio</div>
+            <div className="dateline text-claret-light mb-3">Creative Minds Studio</div>
             <div className="font-display text-[1.6rem] md:text-[1.85rem] leading-[1.2] text-ink mb-8"
                  style={{ fontVariationSettings: "'SOFT' 100, 'opsz' 144, 'wght' 430" }}>
               247 Metropolitan Ave
@@ -82,8 +82,8 @@ export default function Visit() {
               <div>
                 <div className="dateline text-ink-muted mb-2">Getting there</div>
                 <p className="text-ink-soft leading-relaxed">
-                  L train to Bedford, walk five blocks. G train to Metropolitan/Lorimer,
-                  walk two. There's a cat named Noor most afternoons.
+                  L train to Bedford, walk five blocks. G train to Metropolitan / Lorimer,
+                  walk two. Street parking after 7p.
                 </p>
               </div>
             </div>
@@ -109,14 +109,14 @@ export default function Visit() {
             <div className="bg-ink text-paper p-8 md:p-10">
               <div className="grid grid-cols-12 gap-5 items-end">
                 <div className="col-span-12 md:col-span-7">
-                  <div className="dateline text-saffron mb-3">The Studio Dispatch</div>
+                  <div className="dateline text-claret-light mb-3">The Studio Dispatch</div>
                   <h3 className="font-display text-[1.5rem] md:text-[1.75rem] text-paper leading-[1.15]"
                       style={{ fontVariationSettings: "'SOFT' 100, 'opsz' 144, 'wght' 400" }}>
-                    New classes, new rugs, quiet moments.
+                    New arrivals, open class seats, the occasional sale.
                   </h3>
                   <p className="text-paper/70 text-sm mt-2 leading-relaxed">
-                    One thoughtful email a month. No spam, no selling — just what's
-                    happening at the loom.
+                    One email a month. First look at new pieces on the floor and the
+                    upcoming class calendar.
                   </p>
                 </div>
                 <form onSubmit={submit} className="col-span-12 md:col-span-5 flex gap-2">
@@ -126,11 +126,11 @@ export default function Visit() {
                     onChange={e => setEmail(e.target.value)}
                     placeholder="you@email.com"
                     required
-                    className="flex-grow bg-transparent border border-paper/30 focus:border-saffron text-paper placeholder:text-paper/40 px-3 py-2.5 outline-none transition-colors text-sm"
+                    className="flex-grow bg-transparent border border-paper/30 focus:border-claret-light text-paper placeholder:text-paper/40 px-3 py-2.5 outline-none transition-colors text-sm"
                   />
                   <button
                     type="submit"
-                    className="dateline text-ink bg-saffron hover:bg-paper transition-colors px-4 py-2.5 whitespace-nowrap"
+                    className="dateline text-ink bg-claret-light hover:bg-paper transition-colors px-4 py-2.5 whitespace-nowrap"
                   >
                     {submitted ? 'Welcome ✓' : 'Sign up'}
                   </button>

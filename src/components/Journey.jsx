@@ -1,162 +1,100 @@
-import { motion, useInView, useScroll, useTransform } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
-const STOPS = [
+const SERVICES = [
   {
-    city: 'Aleppo',
-    country: 'Syria',
-    years: '1800s – 2011',
-    note: 'Eight generations at the Citadel bazaar. Mahmoud learns to knot as a child.',
-    arabic: 'حلب',
+    n: '01',
+    name: 'Custom Commissions',
+    lede: 'A rug made for your room.',
+    body: 'Pick a size, a palette, and a pattern family — Persian medallion, Anatolian tribal, modern abstract. We sketch, we sample, we weave. Most commissions take 3–6 months.',
+    price: 'From $1,800',
+    cta: 'Start a commission',
   },
   {
-    city: 'Dubai',
-    country: 'UAE',
-    years: '2011 – 2019',
-    note: 'Works with his uncle. Meets Alyssa, a weaver traveling with her mother.',
-    arabic: 'دبي',
+    n: '02',
+    name: 'Repair & Restoration',
+    lede: 'Bring the heirloom in.',
+    body: 'Re-fringing, re-binding, hole repair, dye correction, color matching for replacement knots. We work on rugs we sold and rugs you brought in from anywhere.',
+    price: 'Quote in 1 day',
+    cta: 'Get a quote',
   },
   {
-    city: 'Istanbul',
-    country: 'Türkiye',
-    years: '2019 – 2021',
-    note: 'Moves to be closer to his brother. Mila Rose is still small.',
-    arabic: 'إسطنبول',
-  },
-  {
-    city: 'Houston',
-    country: 'Texas',
-    years: '2021 – Now',
-    note: 'Creative Minds is born. Markets, Etsy, a storage locker the size of a small shop.',
-    arabic: 'هيوستن',
-  },
-  {
-    city: 'Williamsburg',
-    country: 'Brooklyn',
-    years: '2026',
-    note: 'A studio on Metropolitan Avenue. Working looms. Classes. Open doors.',
-    arabic: 'بروكلين',
-    highlight: true,
+    n: '03',
+    name: 'Sourcing & Trade-In',
+    lede: 'Looking for something specific?',
+    body: 'Tell us the size, era, and palette. We have weavers in Türkiye, Syria, and Iran on speed-dial, plus our own pickers at U.S. estates and markets. Trade-in credit available.',
+    price: 'No fee to ask',
+    cta: 'Send a request',
   },
 ]
 
 export default function Journey() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, amount: 0.05 })
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'end start'],
-  })
-  const pathLength = useTransform(scrollYProgress, [0.1, 0.75], [0, 1])
 
   return (
-    <section ref={ref} className="py-28 md:py-40 bg-paper relative">
+    <section id="services" ref={ref} className="py-28 md:py-40 bg-paper relative">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
         {/* Header */}
-        <div className="mb-20 md:mb-28 max-w-3xl">
-          <span className="dateline text-claret">§ 03 · The Journey</span>
-          <h2 className="mt-4 font-display text-display-md text-ink"
-              style={{ fontVariationSettings: "'SOFT' 100, 'opsz' 144, 'wght' 420" }}>
-            A single thread,
-            <br />
-            <span className="italic font-editorial font-normal">five cities.</span>
-          </h2>
-          <p className="mt-6 text-ink-soft leading-relaxed max-w-reading">
-            The loom is heavy. The wool is heavier. Still, the family moved — by choice, by
-            necessity, by war. Follow the thread.
-          </p>
+        <div className="mb-16 md:mb-20 grid grid-cols-12 gap-6 md:gap-10">
+          <div className="col-span-12 md:col-span-6">
+            <span className="dateline text-claret-light">§ 05 · Services</span>
+            <h2 className="mt-4 font-display text-display-md text-ink"
+                style={{ fontVariationSettings: "'SOFT' 100, 'opsz' 144, 'wght' 420" }}>
+              We make, we mend,
+              <br />
+              <span className="italic font-editorial font-normal">we hunt things down.</span>
+            </h2>
+          </div>
+          <div className="col-span-12 md:col-span-6 md:pt-10">
+            <p className="text-ink-soft leading-relaxed max-w-reading">
+              Three things we do besides selling what's already on the wall. Walk in, email, or
+              call — quotes are free and usually same-day.
+            </p>
+          </div>
         </div>
 
-        {/* Journey content: thread + stops */}
-        <div className="relative">
-          {/* Vertical thread SVG — desktop */}
-          <motion.svg
-            className="hidden md:block absolute left-[8.333%] top-0 h-full w-24 -translate-x-1/2 pointer-events-none"
-            preserveAspectRatio="none"
-            viewBox="0 0 100 1000"
-            aria-hidden="true"
-          >
-            <motion.path
-              d="M 50 0
-                 C 80 120, 20 200, 50 320
-                 C 80 440, 20 520, 50 640
-                 C 80 760, 20 840, 50 1000"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeDasharray="6 8"
-              className="text-claret"
-              style={{ pathLength }}
-            />
-          </motion.svg>
-
-          {/* Mobile thread — simple vertical */}
-          <div className="md:hidden absolute left-5 top-0 bottom-0 w-px border-l-2 border-dashed border-claret/50" />
-
-          {/* Stops */}
-          <ol className="relative space-y-20 md:space-y-28">
-            {STOPS.map((stop, i) => (
-              <Stop key={stop.city} stop={stop} index={i} inView={inView} />
-            ))}
-          </ol>
-        </div>
+        {/* Service rows */}
+        <ol className="space-y-px border-t border-ink/15">
+          {SERVICES.map((s, i) => (
+            <motion.li
+              key={s.n}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.1 * i, ease: [0.22, 1, 0.36, 1] }}
+              className="border-b border-ink/15"
+            >
+              <a
+                href="#visit"
+                className="grid grid-cols-12 gap-4 md:gap-10 py-10 md:py-14 group hover:bg-paper-deep/60 transition-colors -mx-6 md:-mx-10 px-6 md:px-10"
+              >
+                <div className="col-span-12 md:col-span-1">
+                  <span className="font-display text-[1.6rem] text-claret-light tabular leading-none"
+                        style={{ fontVariationSettings: "'SOFT' 60, 'opsz' 144, 'wght' 400" }}>
+                    {s.n}
+                  </span>
+                </div>
+                <div className="col-span-12 md:col-span-4">
+                  <h3 className="font-display text-[1.85rem] md:text-[2.25rem] text-ink leading-[1.05] mb-2"
+                      style={{ fontVariationSettings: "'SOFT' 90, 'opsz' 144, 'wght' 410" }}>
+                    {s.name}
+                  </h3>
+                  <p className="font-editorial italic text-ink-soft text-[1.1rem]">{s.lede}</p>
+                </div>
+                <div className="col-span-12 md:col-span-5">
+                  <p className="text-ink-soft leading-relaxed max-w-reading">{s.body}</p>
+                </div>
+                <div className="col-span-12 md:col-span-2 md:text-right">
+                  <div className="dateline text-claret-light mb-3">{s.price}</div>
+                  <span className="dateline text-ink inline-flex items-center gap-2 border-b border-ink/40 pb-1 group-hover:border-claret-light group-hover:text-claret-light transition-colors">
+                    {s.cta} <span>→</span>
+                  </span>
+                </div>
+              </a>
+            </motion.li>
+          ))}
+        </ol>
       </div>
     </section>
-  )
-}
-
-function Stop({ stop, index, inView }) {
-  return (
-    <motion.li
-      initial={{ opacity: 0, y: 32 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.9, delay: 0.15 * index, ease: [0.22, 1, 0.36, 1] }}
-      className="relative grid grid-cols-12 gap-4 md:gap-10 items-start pl-12 md:pl-0"
-    >
-      {/* Knot marker */}
-      <div className="absolute left-5 md:left-[8.333%] top-2 -translate-x-1/2 z-10">
-        <div
-          className={`w-4 h-4 rounded-full border-2 ${
-            stop.highlight
-              ? 'bg-claret border-claret ring-4 ring-saffron/40'
-              : 'bg-paper border-claret'
-          }`}
-        />
-      </div>
-
-      {/* Year + arabic label */}
-      <div className="col-span-12 md:col-span-3 md:col-start-2 md:pl-4">
-        <div className="dateline text-ink-muted mb-1">{stop.years}</div>
-        <div className="font-arabic text-[1.45rem] text-claret/70 leading-none">{stop.arabic}</div>
-      </div>
-
-      {/* City + context */}
-      <div className="col-span-12 md:col-span-7 md:col-start-5">
-        <h3
-          className={`font-display text-[2.25rem] md:text-[3rem] leading-[0.98] ${
-            stop.highlight ? 'text-claret' : 'text-ink'
-          }`}
-          style={{ fontVariationSettings: "'SOFT' 80, 'opsz' 144, 'wght' 400" }}
-        >
-          {stop.city}
-          <span className="ml-3 font-editorial italic font-normal text-ink-muted text-[1.3rem] md:text-[1.6rem]">
-            {stop.country}
-          </span>
-        </h3>
-        <p className="mt-4 text-ink-soft leading-relaxed max-w-lg">
-          {stop.note}
-        </p>
-        {stop.highlight && (
-          <a
-            href="#visit"
-            className="dateline text-claret inline-flex items-center gap-2 mt-6 group"
-          >
-            Visit the studio
-            <span className="block w-6 h-px bg-claret transition-all group-hover:w-10" />
-          </a>
-        )}
-      </div>
-    </motion.li>
   )
 }

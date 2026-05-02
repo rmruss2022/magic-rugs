@@ -32,7 +32,7 @@ export default function Craft() {
         <div className="max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-12 gap-6 md:gap-10 mb-20 md:mb-28">
             <div className="col-span-12 md:col-span-6">
-              <span className="dateline text-claret">§ 04 · The Work</span>
+              <span className="dateline text-claret-light">§ 06 · The Work</span>
               <h2 className="mt-4 font-display text-display-md text-ink"
                   style={{ fontVariationSettings: "'SOFT' 100, 'opsz' 144, 'wght' 420" }}>
                 Every knot is
@@ -42,16 +42,14 @@ export default function Craft() {
             </div>
             <div className="col-span-12 md:col-span-6 md:pt-10">
               <p className="text-ink-soft leading-relaxed max-w-reading">
-                A medium rug holds something like eighty thousand hand-tied knots. Mahmoud
-                works eight-to-fourteen hours on market weeks. He built the loom in his
-                Houston apartment himself, because the traditional one from Aleppo is too
-                big for the room. He's made it work. He always does.
+                A medium rug holds something like eighty thousand hand-tied knots. The
+                pieces on the wall of the studio are a mix: rugs we wove ourselves on
+                the loom in back, antiques pulled from Canton Market and Round Top, and
+                kilims from weavers we trust in Türkiye and Syria.
               </p>
               <p className="mt-4 text-ink-soft leading-relaxed max-w-reading">
-                The rugs on the wall of the new Brooklyn studio are a mix: pieces he's
-                woven himself, antiques he's hunted down at Canton Market and Round Top,
-                and kilims from weavers he trusts in Turkey and Syria. Every one has a
-                history he can tell you.
+                Every one has a provenance card. Ask about any of them — there's a
+                story, and we like telling it.
               </p>
             </div>
           </div>
@@ -73,7 +71,7 @@ export default function Craft() {
                 />
               </div>
               <figcaption className="dateline text-ink-muted mt-3 pl-1">
-                Fig. 03 — Detail from a piece in the new studio.
+                Fig. 02 — On the wall: a hand-knotted Persian, $3,400.
               </figcaption>
             </motion.figure>
 
@@ -92,7 +90,7 @@ export default function Craft() {
                 />
               </div>
               <figcaption className="dateline text-ink-muted mt-3 pl-1">
-                Fig. 04 — The studio cat has opinions.
+                Fig. 03 — A piece in progress on the back-room loom.
               </figcaption>
             </motion.figure>
 
@@ -111,7 +109,7 @@ export default function Craft() {
                 />
               </div>
               <figcaption className="dateline text-ink-muted mt-3 pl-1">
-                Fig. 05 — Picking for a market.
+                Fig. 04 — Back inventory. Anything down here can come up to the floor.
               </figcaption>
             </motion.figure>
 
@@ -130,7 +128,7 @@ export default function Craft() {
                 />
               </div>
               <figcaption className="dateline text-ink-muted mt-3 pl-1">
-                Fig. 06 — Antiques and oddities, curated across years.
+                Fig. 05 — Antiques and oddities. Most pieces are 50–120 years old.
               </figcaption>
             </motion.figure>
           </div>

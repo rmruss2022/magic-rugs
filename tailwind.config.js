@@ -17,6 +17,7 @@ export default {
         claret: {
           DEFAULT: '#6B1F1F',
           dark: '#4A1515',
+          light: '#C2554F',
         },
         saffron: '#C87D2E',
         indigo: {

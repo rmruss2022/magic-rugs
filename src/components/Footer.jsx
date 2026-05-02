@@ -3,21 +3,20 @@ export default function Footer() {
   return (
     <footer className="bg-ink text-paper relative overflow-hidden">
       {/* Warm top border */}
-      <div className="h-px bg-gradient-to-r from-transparent via-saffron/60 to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-claret-light/60 to-transparent" />
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-20 md:py-24">
-        {/* Closing quote */}
+        {/* Closing line */}
         <div className="grid grid-cols-12 gap-6 md:gap-10 mb-20">
           <div className="col-span-12 md:col-span-8">
             <p className="font-editorial italic text-pull text-paper leading-[1.2] max-w-3xl">
-              "I am dying to go back and eat this Syrian sweet
-              they used to have in the old markets. I miss my mom.
-              <span className="block mt-2 text-saffron">I really miss that sweet."</span>
+              Come in. Sit down. Try the loom.
+              <span className="block mt-2 text-claret-light">The kettle is on.</span>
             </p>
-            <p className="dateline text-paper/60 mt-6">— Mahmoud, on Aleppo</p>
+            <p className="dateline text-paper/60 mt-6">— 247 Metropolitan Ave, Brooklyn</p>
           </div>
           <div className="col-span-12 md:col-span-4 md:text-right flex flex-col justify-end">
-            <span className="font-arabic text-[2.6rem] text-saffron/70 leading-none md:ml-auto">حلب</span>
+            <span className="font-arabic text-[2.6rem] text-claret-light/70 leading-none md:ml-auto">حلب</span>
             <span className="dateline text-paper/60 mt-3">Aleppo · حلب</span>
           </div>
         </div>
@@ -33,37 +32,39 @@ export default function Footer() {
               Creative Minds
             </div>
             <p className="dateline text-paper/60 leading-relaxed">
-              Hand-knotted in Aleppo.
+              A weaving studio & rug shop.
               <br />
-              Re-rooted in Brooklyn.
+              Williamsburg, Brooklyn.
             </p>
           </div>
 
           <div className="col-span-6 md:col-span-2">
-            <div className="dateline text-saffron mb-3">Studio</div>
+            <div className="dateline text-claret-light mb-3">Shop</div>
             <ul className="space-y-2 text-paper/85 text-sm">
-              <li><a href="#story" className="hover:text-saffron">Story</a></li>
-              <li><a href="#craft" className="hover:text-saffron">Craft</a></li>
-              <li><a href="#classes" className="hover:text-saffron">Classes</a></li>
-              <li><a href="#visit" className="hover:text-saffron">Visit</a></li>
+              <li><a href="#shop" className="hover:text-claret-light">The Rugs</a></li>
+              <li><a href="#services" className="hover:text-claret-light">Services</a></li>
+              <li><a href="#classes" className="hover:text-claret-light">Classes</a></li>
+              <li><a href="#visit" className="hover:text-claret-light">Visit</a></li>
             </ul>
           </div>
 
           <div className="col-span-6 md:col-span-3">
-            <div className="dateline text-saffron mb-3">Elsewhere</div>
+            <div className="dateline text-claret-light mb-3">Elsewhere</div>
             <ul className="space-y-2 text-paper/85 text-sm">
-              <li><a href="https://instagram.com/creative_minds" className="hover:text-saffron">Instagram</a></li>
-              <li><a href="https://creative-minds.com" className="hover:text-saffron">Etsy / Shop</a></li>
-              <li><a href="mailto:hello@creative-minds.com" className="hover:text-saffron">hello@creative-minds.com</a></li>
+              <li><a href="https://instagram.com/creative_minds" className="hover:text-claret-light">Instagram</a></li>
+              <li><a href="https://creative-minds.com" className="hover:text-claret-light">Etsy / Online shop</a></li>
+              <li><a href="mailto:hello@creative-minds.com" className="hover:text-claret-light">hello@creative-minds.com</a></li>
             </ul>
           </div>
 
           <div className="col-span-12 md:col-span-3">
-            <div className="dateline text-saffron mb-3">Find us</div>
+            <div className="dateline text-claret-light mb-3">Find us</div>
             <p className="text-paper/85 text-sm leading-relaxed">
               247 Metropolitan Ave
               <br />
               Williamsburg, Brooklyn 11211
+              <br />
+              Tue – Sun · 11 – 7
             </p>
           </div>
         </div>
@@ -74,7 +75,7 @@ export default function Footer() {
             © {year} Creative Minds LLC. All rugs have a history.
           </div>
           <div className="dateline text-[0.65rem]">
-            Site in progress — v0.1 · Spring 2026
+            Brooklyn · Williamsburg · حلب
           </div>
         </div>
       </div>

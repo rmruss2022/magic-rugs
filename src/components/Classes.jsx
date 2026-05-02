@@ -8,8 +8,8 @@ const CLASSES = [
     tag: 'Beginner',
     length: '3 hrs',
     price: 120,
-    instructor: 'Alyssa',
-    nextDate: 'Sat · Apr 26 · 2:00 pm',
+    instructor: 'A studio teacher',
+    nextDate: 'Sat · May 16 · 2:00 pm',
     seats: 4,
     remaining: 2,
     description:
@@ -21,25 +21,25 @@ const CLASSES = [
     tag: 'Intermediate',
     length: '4 hrs',
     price: 180,
-    instructor: 'Mahmoud',
-    nextDate: 'Sun · Apr 27 · 2:00 pm',
+    instructor: 'A studio teacher',
+    nextDate: 'Sun · May 17 · 2:00 pm',
     seats: 4,
     remaining: 3,
     description:
-      'The two knot families that built every rug in this room. Learn the tension, the pace, and how to tell whose hands made a rug at a glance.',
+      'The two knot families behind every rug in the shop. Learn the tension, the pace, and how to tell whose hands made a rug at a glance.',
   },
   {
     id: 'private',
-    name: 'Private Lesson with Mahmoud',
+    name: 'Private Lesson with the Master Weaver',
     tag: 'By request',
     length: '2 hrs',
     price: 240,
-    instructor: 'Mahmoud',
+    instructor: 'Master weaver',
     nextDate: 'Scheduled by request',
     seats: 1,
     remaining: 1,
     description:
-      "One-on-one, at his loom. Bring a pattern you've always wanted to make. Or come without one and see what emerges. Tea included.",
+      "One-on-one at the back-room loom. Bring a pattern you've always wanted to make, or come without one and see what emerges. Tea included.",
   },
 ]
 
@@ -52,22 +52,22 @@ export default function Classes() {
       {/* Subtle warm gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink to-claret-dark/70 pointer-events-none" />
       {/* Faint kilim band top */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-saffron/50 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-claret-light/50 to-transparent" />
 
       <div className="relative max-w-[1400px] mx-auto px-6 md:px-10">
         {/* Header */}
         <div className="mb-16 md:mb-20 max-w-3xl">
-          <span className="dateline text-saffron">§ 06 · Classes</span>
+          <span className="dateline text-claret-light">§ 07 · Classes</span>
           <h2 className="mt-4 font-display text-display-lg text-paper"
               style={{ fontVariationSettings: "'SOFT' 80, 'opsz' 144, 'wght' 400" }}>
             Sit at the loom.
             <br />
-            <span className="italic font-editorial font-normal text-saffron">We'll teach you.</span>
+            <span className="italic font-editorial font-normal text-claret-light">We'll teach you.</span>
           </h2>
           <p className="mt-6 text-paper/80 leading-relaxed max-w-reading">
-            Four looms. Small classes. Tea. Whatever music is on the speaker that day.
-            Bring friends. Bring a date. Bring yourself. Every class leaves with a
-            piece of something they started.
+            Four looms. Small classes — usually four people, never more than six. Tea. Bring
+            friends, a date, or yourself. Every class leaves with a piece of something they
+            started, and the lap loom they started it on.
           </p>
         </div>
 
@@ -91,7 +91,7 @@ export default function Classes() {
           className="mt-16 md:mt-20 grid grid-cols-12 gap-6 md:gap-10 border-t border-paper/15 pt-12"
         >
           <div className="col-span-12 md:col-span-6">
-            <div className="dateline text-saffron mb-3">Group bookings</div>
+            <div className="dateline text-claret-light mb-3">Group bookings</div>
             <h3 className="font-display text-[1.6rem] md:text-[2rem] text-paper mb-3"
                 style={{ fontVariationSettings: "'SOFT' 100, 'opsz' 144, 'wght' 400" }}>
               Book the whole studio.
@@ -100,14 +100,14 @@ export default function Classes() {
               Birthdays, bachelorettes, team offsites, or a weird Tuesday night with friends.
               Four looms, a teacher at each.
             </p>
-            <a href="#visit" className="dateline text-paper inline-flex items-center gap-2 mt-5 border-b border-paper/30 pb-1 hover:border-saffron hover:text-saffron transition">
+            <a href="#visit" className="dateline text-paper inline-flex items-center gap-2 mt-5 border-b border-paper/30 pb-1 hover:border-claret-light hover:text-claret-light transition">
               Inquire
               <span>→</span>
             </a>
           </div>
 
           <div className="col-span-12 md:col-span-6">
-            <div className="dateline text-saffron mb-3">Gift a class</div>
+            <div className="dateline text-claret-light mb-3">Gift a class</div>
             <h3 className="font-display text-[1.6rem] md:text-[2rem] text-paper mb-3"
                 style={{ fontVariationSettings: "'SOFT' 100, 'opsz' 144, 'wght' 400" }}>
               A class is a great present.
@@ -116,7 +116,7 @@ export default function Classes() {
               Send a friend who keeps saying they wish they made things with their hands.
               Digital gift cards, any amount.
             </p>
-            <a href="#visit" className="dateline text-paper inline-flex items-center gap-2 mt-5 border-b border-paper/30 pb-1 hover:border-saffron hover:text-saffron transition">
+            <a href="#visit" className="dateline text-paper inline-flex items-center gap-2 mt-5 border-b border-paper/30 pb-1 hover:border-claret-light hover:text-claret-light transition">
               Send a gift
               <span>→</span>
             </a>
@@ -185,7 +185,7 @@ function ClassCard({ c, delay, inView }) {
 
       {/* Thread detail — animated ribbon on hover */}
       <div
-        className={`absolute -top-px left-0 h-px bg-gradient-to-r from-saffron to-claret transition-all duration-700 ${
+        className={`absolute -top-px left-0 h-px bg-gradient-to-r from-claret-light to-claret transition-all duration-700 ${
           hover ? 'w-full' : 'w-0'
         }`}
       />

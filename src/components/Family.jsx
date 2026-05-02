@@ -6,7 +6,7 @@ export default function Family() {
   const inView = useInView(ref, { once: true, amount: 0.05 })
 
   return (
-    <section ref={ref} className="py-28 md:py-36 bg-paper relative">
+    <section id="family" ref={ref} className="py-28 md:py-36 bg-paper relative">
       <div className="max-w-[1400px] mx-auto px-6 md:px-10">
         {/* Header */}
         <div className="mb-20 md:mb-24 grid grid-cols-12 gap-6 md:gap-10">
