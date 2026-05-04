@@ -1,26 +1,38 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
-const CATEGORIES = [
+const GOODS = [
   {
+    n: '01',
     name: 'Hand-Knotted Persians',
-    range: '$1,200 – $9,000',
-    note: 'Tabriz, Kashan, Isfahan. Knotted in our family workshop or sourced from weavers we trust.',
+    arabic: 'معقود',
+    region: 'Tabriz · Kashan · Isfahan',
+    price: '$1,200 – $9,000',
+    note: 'Knotted in our family workshop, or sourced from weavers we trust.',
   },
   {
+    n: '02',
     name: 'Anatolian Kilims',
-    range: '$280 – $2,400',
-    note: 'Flat-weave, geometric, sturdy. Good for a hallway, a couch, or a wall.',
+    arabic: 'كليم',
+    region: 'Türkiye · Syria',
+    price: '$280 – $2,400',
+    note: 'Flat-weave, geometric, sturdy. Hallway, couch, or wall.',
   },
   {
+    n: '03',
     name: 'Vintage & Antique',
-    range: '$600 – $14,000',
-    note: 'Pieces with a history we can tell you. Most are 50–120 years old.',
+    arabic: 'عتيق',
+    region: '50 – 120 yrs old',
+    price: '$600 – $14,000',
+    note: 'Pieces with a history we can tell you. Each comes with a card.',
   },
   {
+    n: '04',
     name: 'Small & Decorative',
-    range: '$45 – $320',
-    note: 'Mug rugs, table runners, framed weavings. Easy to take home today.',
+    arabic: 'صغير',
+    region: 'New from the loom',
+    price: '$45 – $320',
+    note: 'Mug rugs, runners, framed weavings. Easy to take home today.',
   },
 ]
 
@@ -29,93 +41,270 @@ export default function Story() {
   const inView = useInView(ref, { once: true, amount: 0.05 })
 
   return (
-    <section id="shop" ref={ref} className="py-24 md:py-32 bg-paper-deep relative">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-        <div className="grid grid-cols-12 gap-6 md:gap-14 mb-16 md:mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="col-span-12 md:col-span-5"
-          >
-            <div className="photo-frame">
+    <section id="shop" ref={ref} className="bg-paper-deep relative overflow-hidden">
+      {/* BACKGROUND LAYER 1 — visible Persian medallion-ish kilim motif */}
+      <div className="absolute inset-0 opacity-[0.10] pointer-events-none text-claret">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="shop-kilim" width="72" height="72" patternUnits="userSpaceOnUse">
+              <path d="M36 6 L66 36 L36 66 L6 36 Z"
+                    fill="none" stroke="currentColor" strokeWidth="1.2" />
+              <path d="M36 18 L54 36 L36 54 L18 36 Z"
+                    fill="none" stroke="currentColor" strokeWidth="1" />
+              <circle cx="36" cy="36" r="2" fill="currentColor" />
+              <path d="M0 36 L12 36 M60 36 L72 36 M36 0 L36 12 M36 60 L36 72"
+                    stroke="currentColor" strokeWidth="0.8" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#shop-kilim)" />
+        </svg>
+      </div>
+
+      {/* BACKGROUND LAYER 2 — grain */}
+      <div className="absolute inset-0 opacity-[0.07] pointer-events-none mix-blend-multiply"
+           style={{
+             backgroundImage:
+               "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
+           }} />
+
+      {/* BACKGROUND LAYER 3 — top-edge claret wash, like the underside of the awning */}
+      <div className="absolute left-0 right-0 top-0 h-[10%] bg-gradient-to-b from-claret-light/15 to-transparent pointer-events-none" />
+
+      <div className="relative max-w-[1400px] mx-auto px-6 md:px-10 pt-20 md:pt-28 pb-24 md:pb-32">
+
+        {/* MASSIVE Arabic watermark — bottom-left this time so the rhythm varies from Dateline */}
+        <span
+          aria-hidden="true"
+          className="hidden md:block absolute font-arabic text-claret-light/[0.09] leading-none select-none pointer-events-none"
+          style={{
+            fontSize: 'clamp(18rem, 34vw, 32rem)',
+            bottom: '-3rem',
+            left: '-2rem',
+            transform: 'rotate(4deg)',
+          }}
+        >
+          السوق
+        </span>
+
+        {/* INTRO ROW — type RIGHT, photo cluster LEFT (mirror of Dateline so they read as a spread) */}
+        <div className="relative grid grid-cols-12 gap-6 md:gap-10 mb-24 md:mb-32">
+
+          {/* PHOTO CLUSTER — left, cols 1-6 */}
+          <div className="col-span-12 md:col-span-6 relative">
+            {/* Big polaroid: warehouse / brass / antiques — tilted right */}
+            <motion.figure
+              initial={{ opacity: 0, y: 28, rotate: 4 }}
+              animate={inView ? { opacity: 1, y: 0, rotate: 2.4 } : {}}
+              transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
+              className="relative bg-paper p-3 pb-10 inline-block"
+              style={{
+                boxShadow:
+                  '0 30px 50px -28px rgba(26, 21, 17, 0.55), 0 4px 10px -4px rgba(26, 21, 17, 0.18)',
+                maxWidth: '100%',
+              }}
+            >
               <img
-                src="./images/12-customer.jpg"
-                alt="Inside the shop — kilims hung as walls, rugs unrolled on the counter"
-                className="w-full aspect-[4/5] object-cover"
+                src="./images/09-antiques.jpg"
+                alt="Inside the back room — stacks of hand-knotted rugs and a brass Persian vessel"
+                className="w-full md:w-[32rem] aspect-[3/2] object-cover"
                 loading="lazy"
               />
-            </div>
-            <p className="dateline text-ink-muted mt-3 pl-1">
-              Fig. 01 — On the floor. Rugs come down from the wall on request.
-            </p>
-          </motion.div>
+              <div className="absolute inset-3 bg-claret-dark/12 mix-blend-multiply pointer-events-none"
+                   style={{ height: 'calc(100% - 3.25rem)' }} />
+              <figcaption className="font-editorial italic text-ink-soft text-[1.05rem] absolute bottom-2 left-4 right-4">
+                the back room, where everything starts.
+              </figcaption>
+              {/* Tape strip — opposite corner from Dateline */}
+              <div
+                className="absolute -top-3 right-12 w-20 h-6 bg-paper-darker/80 border border-ink/10"
+                style={{
+                  transform: 'rotate(7deg)',
+                  boxShadow: '0 4px 8px -4px rgba(0,0,0,0.25)',
+                }}
+              />
+            </motion.figure>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-            className="col-span-12 md:col-span-6 md:col-start-7 md:pt-14"
-          >
-            <div className="dateline text-claret-light mb-5">§ 03 · The Shop</div>
-            <h2
-              className="font-display text-display-md mb-8 text-ink"
-              style={{ fontVariationSettings: "'SOFT' 90, 'opsz' 144, 'wght' 430" }}
+            {/* Smaller polaroid — fringe wall, hangs into right column */}
+            <motion.figure
+              initial={{ opacity: 0, y: 32, rotate: -6 }}
+              animate={inView ? { opacity: 1, y: 0, rotate: -4 } : {}}
+              transition={{ duration: 1.0, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute z-10 bg-paper p-2 pb-8 hidden md:block"
+              style={{
+                bottom: '-3.5rem',
+                right: '-3rem',
+                width: '17rem',
+                boxShadow:
+                  '0 24px 40px -20px rgba(26, 21, 17, 0.6), 0 4px 8px -3px rgba(26, 21, 17, 0.2)',
+              }}
             >
+              <img
+                src="./images/05-textures.jpg"
+                alt="A wall of finished kilim edges in mixed colors"
+                className="w-full aspect-[5/4] object-cover"
+                loading="lazy"
+              />
+              <figcaption className="font-mono text-[0.62rem] tracking-wider text-ink-muted uppercase absolute bottom-1.5 left-2 right-2">
+                Fig. 03 — finished edges, all one family.
+              </figcaption>
+            </motion.figure>
+
+            {/* Margin handwritten note — Arabic + tiny English */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1.0, delay: 0.5 }}
+              className="hidden md:flex items-baseline gap-3 mt-24 pl-2"
+            >
+              <span className="font-arabic text-[2.2rem] text-claret-light leading-none">القطع</span>
+              <span className="dateline text-ink-muted">al-qiṭaʿ · the pieces</span>
+            </motion.div>
+          </div>
+
+          {/* TYPE STACK — right, cols 7-12 */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1.0, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="col-span-12 md:col-span-6 md:pt-4 relative"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <span className="block w-12 h-px bg-claret-light" />
+              <span className="dateline text-claret-light tracking-tracked-wide">§ 03 — The Goods</span>
+              <span className="font-arabic text-[1.15rem] text-ink-muted">السوق</span>
+            </div>
+
+            <h2 className="font-display text-[2.6rem] md:text-[3.4rem] leading-[0.95] text-ink tracking-tightest-ish"
+                style={{ fontVariationSettings: "'SOFT' 90, 'opsz' 144, 'wght' 410" }}>
               Roughly 200 rugs,
-              <br />
-              <span className="italic font-editorial font-normal">all under one roof.</span>
+              <span className="block italic font-editorial font-normal text-ink-soft mt-1">
+                all under one roof.
+              </span>
             </h2>
 
-            <div className="prose-editorial">
-              <p>
-                The shop carries hand-knotted rugs we make ourselves, kilims sourced from
-                weavers we know in Türkiye and Syria, and a rotating selection of vintage
-                pieces hunted at Round Top, Canton Market, and a few estate sales we won't
-                name. Prices on every piece. No haggling theater.
-              </p>
-              <p>
-                Most of the inventory is on the wall. The rest is in the back. Ask — we'll
-                roll it out for you. Coffee or tea while you decide.
-              </p>
-            </div>
+            <p className="font-editorial italic text-ink-soft text-[1.2rem] mt-6 leading-snug max-w-md">
+              Pulled from the wall and unrolled on the floor on request.
+            </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a
-                href="#visit"
-                className="dateline text-paper bg-ink hover:bg-ink-soft transition-colors px-5 py-3"
-              >
-                Visit the floor →
-              </a>
-              <a
-                href="https://creative-minds.com"
-                className="dateline text-ink border border-ink/40 hover:border-ink hover:bg-ink hover:text-paper px-5 py-3 transition-all"
-              >
-                Shop online
-              </a>
+            <p className="text-ink-soft leading-relaxed mt-6 max-w-md text-[1.02rem]">
+              Hand-knotted Persians we made ourselves, kilims sourced from weavers we know in
+              Türkiye and Syria, and a rotating drift of vintage finds from Round Top, Canton
+              Market, and a few estate sales we won't name. Every piece has a card.
+            </p>
+
+            {/* Hand-stamped credentials line */}
+            <div className="flex items-center gap-3 mt-7 pl-1">
+              <span className="block w-8 h-px bg-ink/40" />
+              <p className="dateline text-ink-muted">Prices on every piece. No haggling theater.</p>
             </div>
           </motion.div>
         </div>
 
-        {/* Categories grid */}
+        {/* ─────────── BROADSHEET PRICE LIST ─────────── */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 28 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 border-t border-ink/10 pt-10"
+          transition={{ duration: 1.1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="relative bg-ink text-paper p-6 md:p-10 pb-8 md:pb-12"
+          style={{
+            transform: 'rotate(-0.3deg)',
+            boxShadow: '0 36px 60px -36px rgba(26, 21, 17, 0.7)',
+          }}
         >
-          {CATEGORIES.map((c) => (
-            <article key={c.name} className="bg-paper p-6 border border-ink/10">
-              <h3 className="font-display text-[1.25rem] text-ink leading-tight mb-3"
-                  style={{ fontVariationSettings: "'SOFT' 100, 'opsz' 144, 'wght' 440" }}>
-                {c.name}
-              </h3>
-              <div className="dateline text-claret-light mb-4 tabular">{c.range}</div>
-              <p className="text-ink-soft text-[0.95rem] leading-relaxed">{c.note}</p>
-            </article>
-          ))}
+          {/* tape corners */}
+          <div className="absolute -top-3 left-10 md:left-16 w-16 h-5 bg-paper-darker/80 border border-ink/10"
+               style={{ transform: 'rotate(-5deg)' }} />
+          <div className="absolute -top-3 right-10 md:right-16 w-16 h-5 bg-paper-darker/80 border border-ink/10"
+               style={{ transform: 'rotate(7deg)' }} />
+
+          {/* Broadsheet header */}
+          <div className="flex items-center justify-between mb-6 md:mb-8 pb-5 border-b border-paper/20 flex-wrap gap-3">
+            <div className="flex items-baseline gap-4">
+              <span className="dateline text-claret-light tracking-tracked-wide">Today On The Floor</span>
+              <span className="font-arabic text-[1rem] text-paper/55 not-italic">القائمة</span>
+            </div>
+            <span className="dateline text-paper/55">Last updated · 2026-05-04</span>
+          </div>
+
+          {/* Hand-stamped subhead */}
+          <p className="font-editorial italic text-paper/80 text-[1.4rem] md:text-[1.6rem] leading-snug mb-7 max-w-2xl">
+            Four shelves. Pull anything down — we'll roll it out.
+          </p>
+
+          {/* The list */}
+          <ul>
+            {GOODS.map((g) => (
+              <GoodsRow key={g.n} g={g} />
+            ))}
+          </ul>
+
+          {/* Broadsheet footer + CTAs */}
+          <div className="mt-8 pt-6 border-t border-paper/20 grid grid-cols-12 gap-4 md:gap-6 items-center">
+            <div className="col-span-12 md:col-span-7">
+              <p className="dateline text-paper/55 leading-relaxed">
+                All prices firm. Receipts kept thirty days.<br />
+                Cards, wires, cash — whatever's easiest.
+              </p>
+            </div>
+            <div className="col-span-12 md:col-span-5 flex flex-wrap items-center gap-3 md:justify-end">
+              <a href="#visit"
+                 className="dateline text-ink bg-paper hover:bg-claret-light hover:text-paper transition-colors px-5 py-3 inline-flex items-center gap-2 group">
+                Visit the floor
+                <span className="transition-transform group-hover:translate-x-1.5">→</span>
+              </a>
+              <a href="https://creative-minds.com"
+                 className="dateline text-paper/85 hover:text-claret-light transition-colors underline-offset-4 hover:underline">
+                or shop online
+              </a>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Side footnote — like a printer's mark in the margin */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 1.0, delay: 0.7 }}
+          className="mt-10 flex items-center gap-3"
+        >
+          <span className="block w-10 h-px bg-ink/30" />
+          <span className="dateline text-ink-muted">Floor inventory is rotated weekly. New finds first on @creative_minds.</span>
         </motion.div>
       </div>
+
+      {/* Torn-paper bottom edge into next section (Loom — bg-indigo) */}
+      <svg className="block w-full text-indigo-deep" viewBox="0 0 1440 28" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 28 L0 14 L48 8 L98 18 L156 6 L210 16 L268 10 L322 4 L382 14 L438 8 L498 18 L558 10 L612 4 L672 14 L728 8 L788 16 L848 6 L908 14 L968 8 L1024 18 L1080 10 L1140 4 L1196 14 L1252 8 L1308 18 L1366 10 L1410 6 L1440 12 L1440 28 Z"
+              fill="currentColor" />
+      </svg>
     </section>
+  )
+}
+
+function GoodsRow({ g }) {
+  return (
+    <li>
+      <div className="grid grid-cols-12 gap-3 md:gap-6 py-5 md:py-6 border-b border-dashed border-paper/20 items-baseline">
+        <span className="col-span-2 md:col-span-1 font-display text-[1.2rem] text-claret-light tabular leading-none"
+              style={{ fontVariationSettings: "'SOFT' 60, 'opsz' 144, 'wght' 440" }}>
+          {g.n}
+        </span>
+        <div className="col-span-10 md:col-span-6">
+          <div className="flex items-baseline gap-3">
+            <span className="font-display text-[1.45rem] md:text-[1.7rem] text-paper leading-none"
+                  style={{ fontVariationSettings: "'SOFT' 90, 'opsz' 144, 'wght' 420" }}>
+              {g.name}
+            </span>
+            <span className="font-arabic text-[1.05rem] md:text-[1.15rem] text-paper/55 leading-none">{g.arabic}</span>
+          </div>
+          <p className="text-paper/70 text-[0.95rem] mt-2 leading-relaxed max-w-md">{g.note}</p>
+        </div>
+        <span className="col-span-6 md:col-span-2 dateline text-paper/55">{g.region}</span>
+        <span className="col-span-6 md:col-span-3 md:text-right font-display text-[1.1rem] md:text-[1.2rem] text-paper tabular"
+              style={{ fontVariationSettings: "'SOFT' 60, 'opsz' 144, 'wght' 440" }}>
+          {g.price}
+        </span>
+      </div>
+    </li>
   )
 }
