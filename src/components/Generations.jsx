@@ -227,11 +227,6 @@ export default function Generations() {
         </motion.div>
       </div>
 
-      {/* Torn-paper bottom edge — into bg-paper for the Services section */}
-      <svg className="block w-full text-paper" viewBox="0 0 1440 28" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0 28 L0 12 L52 18 L108 8 L162 16 L218 6 L272 14 L328 8 L388 18 L444 10 L500 4 L556 14 L612 8 L672 18 L728 10 L784 6 L844 14 L898 8 L958 18 L1014 10 L1070 4 L1126 14 L1184 8 L1240 18 L1296 10 L1356 4 L1410 14 L1440 10 L1440 28 Z"
-              fill="currentColor" />
-      </svg>
     </section>
   )
 }
