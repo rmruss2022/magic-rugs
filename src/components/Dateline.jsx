@@ -51,11 +51,12 @@ export default function Dateline() {
           {/* MASSIVE Arabic watermark — sits behind everything */}
           <span
             aria-hidden="true"
-            className="hidden md:block absolute font-arabic text-claret-light/[0.10] leading-none select-none pointer-events-none"
+            className="hidden md:block absolute font-arabic leading-none select-none pointer-events-none"
             style={{
               fontSize: 'clamp(20rem, 38vw, 36rem)',
               top: '-2rem',
               right: '-3rem',
+              color: 'rgba(194, 85, 79, 0.10)',
               transform: 'rotate(-6deg)',
             }}
           >
@@ -204,11 +205,6 @@ export default function Dateline() {
           </div>
         </div>
 
-        {/* Torn-paper bottom edge into next section */}
-        <svg className="block w-full text-paper-deep" viewBox="0 0 1440 28" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M0 28 L0 12 L40 16 L80 8 L130 14 L180 6 L230 18 L290 10 L340 16 L400 4 L460 14 L520 8 L580 18 L640 10 L700 4 L760 14 L820 8 L880 16 L940 6 L1000 14 L1060 8 L1120 18 L1180 10 L1240 4 L1300 14 L1360 8 L1400 16 L1440 10 L1440 28 Z"
-                fill="currentColor" />
-        </svg>
       </div>
     </section>
   )

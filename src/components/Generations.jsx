@@ -34,16 +34,28 @@ export default function Generations() {
       <div className="absolute inset-0 pointer-events-none"
            style={{ background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.45) 100%)' }} />
 
-      <div className="relative max-w-[1400px] mx-auto px-6 md:px-10 pt-24 md:pt-32 pb-24 md:pb-32">
+      {/* TORN CAP — paints Shop's paper-deep over the top edge for continuous texture */}
+      <svg
+        className="absolute top-0 left-0 right-0 block w-full text-paper-deep -scale-y-100 z-20 pointer-events-none"
+        viewBox="0 0 1440 28"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path d="M0 28 L0 14 L48 8 L98 18 L156 6 L210 16 L268 10 L322 4 L382 14 L438 8 L498 18 L558 10 L612 4 L672 14 L728 8 L788 16 L848 6 L908 14 L968 8 L1024 18 L1080 10 L1140 4 L1196 14 L1252 8 L1308 18 L1366 10 L1410 6 L1440 12 L1440 28 Z"
+              fill="currentColor" />
+      </svg>
+
+      <div className="relative max-w-[1400px] mx-auto px-6 md:px-10 pt-32 md:pt-40 pb-24 md:pb-32">
 
         {/* MASSIVE Arabic watermark — top-right, the loom (النول) */}
         <span
           aria-hidden="true"
-          className="hidden md:block absolute font-arabic text-claret-light/[0.10] leading-none select-none pointer-events-none"
+          className="hidden md:block absolute font-arabic leading-none select-none pointer-events-none"
           style={{
             fontSize: 'clamp(18rem, 32vw, 30rem)',
             top: '4rem',
             right: '-4rem',
+            color: 'rgba(194, 85, 79, 0.10)',
             transform: 'rotate(-5deg)',
           }}
         >

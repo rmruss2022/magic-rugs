@@ -51,11 +51,12 @@ export default function Journey() {
         {/* MASSIVE Arabic watermark — bottom-right (different position from Loom's top-right) */}
         <span
           aria-hidden="true"
-          className="hidden md:block absolute font-arabic text-claret-light/[0.10] leading-none select-none pointer-events-none"
+          className="hidden md:block absolute font-arabic leading-none select-none pointer-events-none"
           style={{
             fontSize: 'clamp(18rem, 32vw, 30rem)',
             bottom: '-2rem',
             right: '-3rem',
+            color: 'rgba(194, 85, 79, 0.10)',
             transform: 'rotate(6deg)',
           }}
         >
@@ -338,11 +339,6 @@ export default function Journey() {
         </motion.div>
       </div>
 
-      {/* Torn-paper bottom edge — into bg-paper-deep for Craft */}
-      <svg className="block w-full text-paper-deep" viewBox="0 0 1440 28" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0 28 L0 14 L46 6 L102 16 L160 8 L218 18 L274 10 L330 4 L388 14 L444 8 L500 18 L558 10 L614 4 L676 14 L732 8 L790 16 L848 6 L908 14 L966 8 L1022 18 L1080 10 L1138 4 L1194 14 L1252 8 L1308 16 L1366 6 L1410 14 L1440 10 L1440 28 Z"
-              fill="currentColor" />
-      </svg>
     </section>
   )
 }

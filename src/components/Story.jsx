@@ -70,16 +70,28 @@ export default function Story() {
       {/* BACKGROUND LAYER 3 — top-edge claret wash, like the underside of the awning */}
       <div className="absolute left-0 right-0 top-0 h-[10%] bg-gradient-to-b from-claret-light/15 to-transparent pointer-events-none" />
 
-      <div className="relative max-w-[1400px] mx-auto px-6 md:px-10 pt-20 md:pt-28 pb-24 md:pb-32">
+      {/* TORN CAP — paints Dateline's paper color over the top edge for continuous texture */}
+      <svg
+        className="absolute top-0 left-0 right-0 block w-full text-paper -scale-y-100 z-20 pointer-events-none"
+        viewBox="0 0 1440 28"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path d="M0 28 L0 12 L40 16 L80 8 L130 14 L180 6 L230 18 L290 10 L340 16 L400 4 L460 14 L520 8 L580 18 L640 10 L700 4 L760 14 L820 8 L880 16 L940 6 L1000 14 L1060 8 L1120 18 L1180 10 L1240 4 L1300 14 L1360 8 L1400 16 L1440 10 L1440 28 Z"
+              fill="currentColor" />
+      </svg>
+
+      <div className="relative max-w-[1400px] mx-auto px-6 md:px-10 pt-28 md:pt-36 pb-24 md:pb-32">
 
         {/* MASSIVE Arabic watermark — bottom-left this time so the rhythm varies from Dateline */}
         <span
           aria-hidden="true"
-          className="hidden md:block absolute font-arabic text-claret-light/[0.09] leading-none select-none pointer-events-none"
+          className="hidden md:block absolute font-arabic leading-none select-none pointer-events-none"
           style={{
             fontSize: 'clamp(18rem, 34vw, 32rem)',
             bottom: '-3rem',
             left: '-2rem',
+            color: 'rgba(194, 85, 79, 0.09)',
             transform: 'rotate(4deg)',
           }}
         >
@@ -272,11 +284,6 @@ export default function Story() {
         </motion.div>
       </div>
 
-      {/* Torn-paper bottom edge into next section (Loom — bg-indigo) */}
-      <svg className="block w-full text-indigo-deep" viewBox="0 0 1440 28" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0 28 L0 14 L48 8 L98 18 L156 6 L210 16 L268 10 L322 4 L382 14 L438 8 L498 18 L558 10 L612 4 L672 14 L728 8 L788 16 L848 6 L908 14 L968 8 L1024 18 L1080 10 L1140 4 L1196 14 L1252 8 L1308 18 L1366 10 L1410 6 L1440 12 L1440 28 Z"
-              fill="currentColor" />
-      </svg>
     </section>
   )
 }
