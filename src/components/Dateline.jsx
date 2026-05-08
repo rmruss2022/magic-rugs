@@ -21,7 +21,7 @@ export default function Dateline() {
 
       {/* ─────────── DENSE LAYERED COMPOSITION ─────────── */}
       <div className="relative">
-        {/* BACKGROUND LAYER 1 — visible kilim pattern at high opacity */}
+        {/* BACKGROUND LAYER 1 — kilim runs full-bleed; pattern continues through the seam */}
         <div className="absolute inset-0 opacity-[0.13] pointer-events-none text-claret">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -35,15 +35,12 @@ export default function Dateline() {
           </svg>
         </div>
 
-        {/* BACKGROUND LAYER 2 — grain noise */}
+        {/* BACKGROUND LAYER 2 — grain runs full-bleed too */}
         <div className="absolute inset-0 opacity-[0.06] pointer-events-none mix-blend-multiply"
              style={{
                backgroundImage:
                  "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
              }} />
-
-        {/* BACKGROUND LAYER 3 — full-bleed claret stripe across the bottom */}
-        <div className="absolute left-0 right-0 bottom-0 h-[12%] bg-gradient-to-b from-transparent to-claret-light/15 pointer-events-none" />
 
         {/* CONTENT — asymmetric grid */}
         <div className="relative max-w-[1400px] mx-auto px-6 md:px-10 pt-20 md:pt-28 pb-24 md:pb-32">

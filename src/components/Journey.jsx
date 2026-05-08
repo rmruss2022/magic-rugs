@@ -7,7 +7,7 @@ export default function Journey() {
 
   return (
     <section id="services" ref={ref} className="bg-paper relative overflow-hidden">
-      {/* BG LAYER 1 — kilim pattern (different motif: hooked-cross, like a Persian gul) */}
+      {/* BG LAYER 1 — kilim runs full-bleed; pattern continues through the Craft seam */}
       <div className="absolute inset-0 opacity-[0.09] pointer-events-none text-claret">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -24,7 +24,7 @@ export default function Journey() {
         </svg>
       </div>
 
-      {/* BG LAYER 2 — grain */}
+      {/* BG LAYER 2 — grain runs full-bleed too */}
       <div className="absolute inset-0 opacity-[0.06] pointer-events-none mix-blend-multiply"
            style={{
              backgroundImage:

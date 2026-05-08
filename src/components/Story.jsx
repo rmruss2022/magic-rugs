@@ -41,8 +41,8 @@ export default function Story() {
   const inView = useInView(ref, { once: true, amount: 0.05 })
 
   return (
-    <section id="shop" ref={ref} className="bg-paper-deep relative overflow-hidden">
-      {/* BACKGROUND LAYER 1 — visible Persian medallion-ish kilim motif */}
+    <section id="shop" ref={ref} className="bg-paper relative overflow-hidden">
+      {/* BACKGROUND LAYER 1 — kilim runs full-bleed; pattern overlaps with Dateline at the seam */}
       <div className="absolute inset-0 opacity-[0.10] pointer-events-none text-claret">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -60,22 +60,22 @@ export default function Story() {
         </svg>
       </div>
 
-      {/* BACKGROUND LAYER 2 — grain */}
+      {/* BACKGROUND LAYER 2 — grain runs full-bleed too */}
       <div className="absolute inset-0 opacity-[0.07] pointer-events-none mix-blend-multiply"
            style={{
              backgroundImage:
                "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
            }} />
 
-      {/* BACKGROUND LAYER 3 — top-edge claret wash, like the underside of the awning */}
-      <div className="absolute left-0 right-0 top-0 h-[10%] bg-gradient-to-b from-claret-light/15 to-transparent pointer-events-none" />
-
-      {/* TORN CAP — paints Dateline's paper color over the top edge for continuous texture */}
+      {/* TORN ZIGZAG — paper-deep tone so the torn edge reads against the paper bg,
+          with a soft shadow underneath for that lifted-torn-paper feel. Kilims on
+          both sides run continuously up to it. */}
       <svg
-        className="absolute top-0 left-0 right-0 block w-full text-paper -scale-y-100 z-20 pointer-events-none"
+        className="absolute top-0 left-0 right-0 block w-full text-paper-deep -scale-y-100 z-20 pointer-events-none"
         viewBox="0 0 1440 28"
         preserveAspectRatio="none"
         aria-hidden="true"
+        style={{ filter: 'drop-shadow(0 3px 4px rgba(26, 21, 17, 0.18))' }}
       >
         <path d="M0 28 L0 12 L40 16 L80 8 L130 14 L180 6 L230 18 L290 10 L340 16 L400 4 L460 14 L520 8 L580 18 L640 10 L700 4 L760 14 L820 8 L880 16 L940 6 L1000 14 L1060 8 L1120 18 L1180 10 L1240 4 L1300 14 L1360 8 L1400 16 L1440 10 L1440 28 Z"
               fill="currentColor" />

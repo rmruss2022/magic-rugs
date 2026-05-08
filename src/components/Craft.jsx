@@ -57,8 +57,8 @@ export default function Craft() {
   const inView = useInView(ref, { once: true, amount: 0.05 })
 
   return (
-    <section id="craft" ref={ref} className="bg-paper-deep relative overflow-hidden">
-      {/* BG LAYER 1 — kilim pattern (different motif: octagon + cross) */}
+    <section id="craft" ref={ref} className="bg-paper relative overflow-hidden">
+      {/* BG LAYER 1 — kilim runs full-bleed; pattern overlaps with Services through the seam */}
       <div className="absolute inset-0 opacity-[0.10] pointer-events-none text-claret">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -76,19 +76,21 @@ export default function Craft() {
         </svg>
       </div>
 
-      {/* BG LAYER 2 — grain */}
+      {/* BG LAYER 2 — grain runs full-bleed too */}
       <div className="absolute inset-0 opacity-[0.06] pointer-events-none mix-blend-multiply"
            style={{
              backgroundImage:
                "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
            }} />
 
-      {/* TORN CAP — paints Services' paper color over the top edge */}
+      {/* TORN ZIGZAG — paper-deep tone so the torn edge reads against the paper bg,
+          with a soft shadow underneath. Kilims on both sides run up to it continuously. */}
       <svg
-        className="absolute top-0 left-0 right-0 block w-full text-paper -scale-y-100 z-20 pointer-events-none"
+        className="absolute top-0 left-0 right-0 block w-full text-paper-deep -scale-y-100 z-20 pointer-events-none"
         viewBox="0 0 1440 28"
         preserveAspectRatio="none"
         aria-hidden="true"
+        style={{ filter: 'drop-shadow(0 3px 4px rgba(26, 21, 17, 0.18))' }}
       >
         <path d="M0 28 L0 14 L46 6 L102 16 L160 8 L218 18 L274 10 L330 4 L388 14 L444 8 L500 18 L558 10 L614 4 L676 14 L732 8 L790 16 L848 6 L908 14 L966 8 L1022 18 L1080 10 L1138 4 L1194 14 L1252 8 L1308 16 L1366 6 L1410 14 L1440 10 L1440 28 Z"
               fill="currentColor" />
