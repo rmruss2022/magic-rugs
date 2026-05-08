@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Creative Minds">
+  <!-- Paper card with a light rounded corner so it reads as a tile, not a sticker -->
+  <rect width="32" height="32" rx="4" fill="#EFE7D4"/>
+
+  <!-- Persian medallion: nested diamonds, the kilim vocabulary the site is built on -->
+  <g fill="#6B1F1F">
+    <path d="M16 2.5 L29.5 16 L16 29.5 L2.5 16 Z"/>
+  </g>
+  <g fill="#EFE7D4">
+    <path d="M16 8 L24 16 L16 24 L8 16 Z"/>
+  </g>
+  <g fill="#6B1F1F">
+    <path d="M16 12 L20 16 L16 20 L12 16 Z"/>
+  </g>
+
+  <!-- Tiny hooks at the cardinals — the hand-crafted weaver's tic that turns a diamond into a gul -->
+  <g fill="#6B1F1F">
+    <rect x="15.25" y="0"  width="1.5" height="2"/>
+    <rect x="15.25" y="30" width="1.5" height="2"/>
+    <rect x="0"  y="15.25" width="2" height="1.5"/>
+    <rect x="30" y="15.25" width="2" height="1.5"/>
+  </g>
+</svg>
